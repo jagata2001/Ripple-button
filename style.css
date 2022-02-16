@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+@keyframes ripple {
+  to {
+    transform: scale(3);
+  }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+button{
+  position: relative;
+  overflow: hidden;
+  width: 180px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #e91e63;
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 0 4px 0px #b1b1b1;
+  user-select: none;
+  transition: all 600ms;
+}
+button:hover{
+  transform: scale(1.1);
+}
+button .ripple{
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  position: absolute;
+  animation: ripple 600ms linear;
+  animation-fill-mode: forwards;
+  width: 20px;
+  height: 20px;
+  transition: all 600ms;
+}
+
+@media only screen and (max-width: 728px){
+  button:hover{
+    transform: scale(1);
+  }
+}
+/* Created by jagata */
